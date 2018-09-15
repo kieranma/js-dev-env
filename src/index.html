@@ -1,6 +1,16 @@
+<!-- EJS File -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+      <script>
+          window._trackJs = {
+              token: '<%=htmlWebpackPlugin.options.trackJSToken%>'
+          };
+      </script>
+      <script src="https://cdn.trackjs.com/releases/current/tracker.js">
+      </script>
+    <% } %>
     <meta charset="UTF-8">
   </head>
   <body>
@@ -17,6 +27,5 @@
 
       </tbody>
     </table>
-    <script src="bundle.js"></script>
   </body>
 </html>
